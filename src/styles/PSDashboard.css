@@ -1,0 +1,251 @@
+/* ============================================================
+   DevPipeline — Project Sponsor Dashboard Theme (PSDashboard.css)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+
+/* --- Primary Dashboard Container --- */
+.ps-dashboard {
+  width: 100%;
+  min-height: 100vh;
+  
+  /* Compacted layout tracking metrics */
+  padding: 8rem 6vw 4rem;
+  
+  background: #030712;
+  color: #e2e8f0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================================
+   HEADER BLOCK (Scaled Down)
+   ============================================================ */
+.ps-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.ps-header h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  background: linear-gradient(135deg, #ffffff 40%, #e5c07b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ps-header h3 {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #64748b;
+}
+
+/* Red Destructive Action UI Indicator */
+.ps-header button {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: transparent;
+  border: 1px solid rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.ps-header button:hover {
+  background: rgba(239, 68, 68, 0.06);
+  border-color: #ef4444;
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.08);
+}
+
+/* ============================================================
+   NAVIGATION TABS (Scaled Down)
+   ============================================================ */
+.ps-subnav {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.ps-subnav button {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: rgba(11, 19, 35, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  color: #94a3b8;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 400;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.ps-subnav button:hover {
+  color: #ffffff;
+  background: rgba(11, 19, 35, 0.6);
+  border-color: rgba(212, 175, 55, 0.15);
+}
+
+.ps-subnav button.active, 
+.ps-subnav button:focus-visible {
+  background: rgba(212, 175, 55, 0.06);
+  border-color: rgba(212, 175, 55, 0.3);
+  color: #e5c07b;
+}
+
+/* Horizontal Divider Rule */
+.ps-dashboard hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.1), transparent);
+  margin-bottom: 24px;
+}
+
+/* ============================================================
+   VIEWS AND HEADINGS (Data Dense Layout)
+   ============================================================ */
+.ps-dashboard h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.55rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 10px;
+  letter-spacing: 0.01em;
+}
+
+.ps-dashboard p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+/* ============================================================
+   FORM CREATION CONTROLS (Dense Profiles)
+   ============================================================ */
+.ps-dashboard input[type="text"],
+.ps-dashboard input:not([type]), 
+.ps-dashboard textarea {
+  width: 100%;
+  max-width: 580px;
+  background: rgba(11, 19, 35, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  padding: 10px 12px;
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.ps-dashboard textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.ps-dashboard input:focus,
+.ps-dashboard textarea:focus {
+  border-color: rgba(212, 175, 55, 0.25);
+  background: rgba(15, 25, 48, 0.65);
+}
+
+/* Standard Secondary Interface Buttons */
+.ps-dashboard div > button:not(.ps-subnav button):not(.ps-header button) {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: rgba(212, 175, 55, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  color: #e5c07b;
+  padding: 8px 18px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  margin-right: 8px;
+  margin-top: 4px;
+}
+
+.ps-dashboard div > button:not(.ps-subnav button):not(.ps-header button):hover:not(:disabled) {
+  background: rgba(212, 175, 55, 0.12);
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+/* ============================================================
+   OBSIDIAN GLASS CARDS (Compressed Footprint)
+   ============================================================ */
+.ps-card {
+  position: relative;
+  background: rgba(11, 19, 35, 0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(212, 175, 55, 0.06);
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  max-width: 760px;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  
+  clip-path: polygon(
+    0 0,
+    96% 0,
+    100% 6%,
+    100% 100%,
+    4% 100%,
+    0 94%
+  );
+}
+
+.ps-card:hover {
+  transform: translateX(3px);
+  background: rgba(15, 25, 48, 0.65);
+  border-color: rgba(212, 175, 55, 0.2);
+}
+
+.ps-card h3 {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #f8fafc;
+  margin-bottom: 6px;
+}
+
+.ps-card p {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   UTILITY STATES
+   ============================================================ */
+.ps-dashboard button:disabled {
+  background: rgba(255, 255, 255, 0.01) !important;
+  border-color: rgba(255, 255, 255, 0.04) !important;
+  color: #475569 !important;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+@media (max-width: 768px) {
+  .ps-dashboard {
+    padding: 6.5rem 4vw 3rem;
+  }
+  .ps-card {
+    clip-path: none;
+    border-radius: 4px;
+  }
+}

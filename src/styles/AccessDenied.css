@@ -1,0 +1,179 @@
+/* =========================
+   ACCESS DENIED (DARK SYSTEM UI)
+   MATCHES YOUR CURRENT JSX
+========================= */
+
+.access-container {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding: 40px 20px;
+
+  position: relative;
+  overflow: hidden;
+
+  background: radial-gradient(circle at top, #0d1117, #05070c);
+  color: #e6edf3;
+
+  font-family: "Inter", sans-serif;
+}
+
+/* =========================
+   GRID BACKGROUND (LIKE HERO)
+========================= */
+.access-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(88, 166, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(88, 166, 255, 0.12) 1px, transparent 1px);
+
+  background-size: 35px 35px;
+
+  opacity: 0.25;
+
+  pointer-events: none;
+}
+
+/* =========================
+   GLOW LAYERS
+========================= */
+.access-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 30% 30%, rgba(88,166,255,0.15), transparent 45%),
+    radial-gradient(circle at 70% 60%, rgba(124,58,237,0.10), transparent 50%);
+
+  opacity: 0.6;
+
+  pointer-events: none;
+}
+
+/* =========================
+   TITLE
+========================= */
+.access-container h1 {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 700;
+
+  margin-bottom: 12px;
+
+  background: linear-gradient(90deg, #58a6ff, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   TEXT
+========================= */
+.access-container p {
+  font-size: 1rem;
+  line-height: 1.7;
+
+  color: #9aa4af;
+
+  max-width: 500px;
+
+  margin-bottom: 30px;
+
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   BUTTON GROUP
+========================= */
+.access-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   BUTTON BASE
+========================= */
+.access-buttons button {
+  padding: 11px 18px;
+
+  border-radius: 1px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  border: 1px solid rgba(88,166,255,0.2);
+
+  background: rgba(255, 255, 255, 0.03);
+
+  color: #e6edf3;
+
+  transition: 0.25s ease;
+}
+
+/* =========================
+   HOME BUTTON (BLUE)
+========================= */
+.access-buttons button:nth-child(1) {
+  border-color: rgba(88,166,255,0.3);
+}
+
+.access-buttons button:nth-child(1):hover {
+  background: #58a6ff;
+  color: #0d1117;
+}
+
+/* =========================
+   LOGIN BUTTON (PURPLE)
+========================= */
+.access-buttons button:nth-child(2) {
+  border-color: rgba(124,58,237,0.3);
+  color: #c4b5fd;
+}
+
+.access-buttons button:nth-child(2):hover {
+  background: #7c3aed;
+  color: white;
+}
+
+/* =========================
+   REGISTER BUTTON
+========================= */
+.access-buttons button:nth-child(3) {
+  border-color: rgba(88,166,255,0.2);
+  color: #58a6ff;
+}
+
+.access-buttons button:nth-child(3):hover {
+  background: rgba(88,166,255,0.15);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+  .access-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .access-buttons button {
+    width: 100%;
+  }
+}

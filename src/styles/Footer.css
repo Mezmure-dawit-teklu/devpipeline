@@ -1,0 +1,432 @@
+/* ============================================================
+   DevPipeline — Complete Master Sheet (Full Dark Luxury Ecosystem)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+
+/* ================= GLOBAL RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background: #030712; 
+  overflow-x: hidden;
+}
+
+/* ================= UNIFIED MAIN WRAPPER ================= */
+.unified-page-wrapper {
+  width: 100%;
+  position: relative;
+  isolation: isolate;
+
+  /* ✨ SHINY LUXURY CANVAS GRADIENT ACCENT FOR BOTH SECTIONS */
+  background: linear-gradient(
+    150deg,
+    #030712 0%,
+    #0b1329 40%,
+    #050a15 70%,
+    #030712 100%
+  );
+  background-size: 300% 300%;
+  animation: sectionBgMove 16s ease infinite;
+}
+
+/* ================= TRANSPARENCY OVERRIDES ================= */
+.hero, .carousel-section {
+  background: transparent !important;
+}
+.section::after, .hero::after, .carousel-section::after {
+  display: none !important;
+}
+
+/* ================= 1. HERO CONTROLS ================= */
+.hero {
+  width: 100%;
+  padding: 11rem 8vw 6rem; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* ================= 2. CAROUSEL/GRID SECTION ================= */
+.carousel-section {
+  width: 100%;
+  margin: 0;
+  border: none;
+  padding: 40px 8vw 120px; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  position: relative;
+}
+
+/* ================= HEADER INSIDE GRID ================= */
+.carousel-header {
+  text-align: left;
+  max-width: 800px;
+  margin-bottom: 60px;
+}
+
+.carousel-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 55px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+  
+  background: linear-gradient(135deg, #ffffff 40%, #e5c07b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.carousel-header p {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #94a3b8;
+  line-height: 1.7;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+/* ================= IMAGE WRAPPER & FLOATING NODES ================= */
+.pm-hero-images {
+  position: relative;
+  width: 800px; 
+  height: 140px;
+  padding-left: 150px;
+  border-radius: 10px;
+  
+  /* ── PUSHES CARDS FAR DOWN UNDERNEATH THE IMAGES ── */
+  margin-bottom: 240px; 
+}
+
+.pm-hero-image {
+  position: relative;
+}
+
+.float-img {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  border-radius: 100px;
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+  animation: floatOrbit 10s linear infinite, fadeFloat 10s ease-in-out infinite;
+}
+
+.f1 { top: -60px; left: 10px; animation-delay: 0s; }
+.f2 { top: 20px; right: -70px; animation-delay: 2s; }
+.f3 { bottom: -60px; left: 40px; animation-delay: 4s; }
+.f4 { bottom: 10px; right: 30px; animation-delay: 6s; }
+
+@keyframes floatOrbit {
+  0% { transform: translate(0,0) scale(0.9); }
+  25% { transform: translate(15px,-25px) scale(1.05); }
+  50% { transform: translate(0,-45px) scale(1); }
+  75% { transform: translate(-15px,-25px) scale(1.05); }
+  100% { transform: translate(0,0) scale(0.9); }
+}
+
+@keyframes fadeFloat {
+  0% { opacity: 0; }
+  20% { opacity: 0.5; }
+  50% { opacity: 0.7; }
+  80% { opacity: 0.4; }
+  100% { opacity: 0; }
+}
+
+/* ================= GRID LIST ================= */
+.carousel-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* ================= UNIQUE LUXURY CARD ================= */
+.card {
+  position: relative;
+  background: rgba(11, 19, 35, 0.45); /* Obsidian glass */
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(212, 175, 55, 0.08); /* Fine gold edge */
+  padding: 22px;
+
+  clip-path: polygon(
+    0 0,
+    92% 0,
+    100% 12%,
+    100% 100%,
+    8% 100%,
+    0 88%
+  );
+  
+  border-radius: 0px;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  opacity: 0;
+  transform: translateY(40px);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(30, 58, 138, 0.1), transparent 60%);
+  z-index: -1;
+  filter: blur(12px);
+  opacity: 0.35;
+  transition: 0.4s ease;
+}
+
+.show-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  background: rgba(15, 25, 48, 0.65);
+  border-color: rgba(212, 175, 55, 0.3);
+  box-shadow: 0 25px 60px rgba(212, 175, 55, 0.12);
+}
+
+.card:hover::before { opacity: 0.7; }
+
+/* ================= CARD INNER DETAILS ================= */
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.step-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #e5c07b;
+}
+
+.step-tag {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 2px;
+  background: rgba(212, 175, 55, 0.08);
+  color: #e5c07b;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.step-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+
+.step-desc {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  font-weight: 300;
+}
+
+.card-footer {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8rem;
+  color: #475569;
+}
+
+/* ================= BACKGROUND SYSTEM ANIMATION ================= */
+@keyframes sectionBgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ============================================================
+   3. REFACTORED OLD FOOTER (INTEGRATED INTO OBSIDIAN TECH THEME)
+   ============================================================ */
+.footer {
+  font-family: "Inter", sans-serif;
+  padding: 80px 8vw 40px;
+
+  /* Seamless transition into dark background canvas */
+  background: #030712;
+  color: #94a3b8;
+
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(212, 175, 55, 0.08); /* Minimal gold boundary */
+}
+
+/* Top dynamic alignment glow line */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 84%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212, 175, 55, 0.25),
+    transparent
+  );
+  opacity: 0.7;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 45px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 16px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: #ffffff; /* Stark white headers */
+}
+
+/* Clean luxury signature brand styling */
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ffffff 30%, #e5c07b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.01em;
+}
+
+.footer-desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+
+.footer-version {
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  font-size: 0.95rem;
+  padding: 7px 0;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.footer-section ul li:hover {
+  color: #e5c07b; /* Transitions smoothly to gold accent */
+  transform: translateX(5px);
+}
+
+/* Workflow Flow Badges */
+.pipeline-flow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.pipeline-flow span {
+  padding: 6px 12px;
+  border-radius: 4px;
+  background: rgba(11, 19, 35, 0.45);
+  border: 1px solid rgba(212, 175, 55, 0.08);
+  color: #cbd5e1;
+  transition: all 0.3s ease;
+}
+
+.pipeline-flow span:hover {
+  background: rgba(212, 175, 55, 0.08);
+  border-color: rgba(212, 175, 55, 0.3);
+  color: #e5c07b;
+  transform: translateY(-2px);
+}
+
+.status {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.status.active {
+  color: #34d399; /* System success emerald */
+}
+
+.footer-bottom {
+  margin-top: 50px;
+  padding-top: 24px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #475569;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Flow elements entrance fade animation */
+.footer-section {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.footer-section:nth-child(1) { animation-delay: 0.1s; }
+.footer-section:nth-child(2) { animation-delay: 0.2s; }
+.footer-section:nth-child(3) { animation-delay: 0.3s; }
+.footer-section:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive constraints */
+@media (max-width: 768px) {
+  .footer {
+    padding: 50px 8vw 20px;
+  }
+
+  .footer-container {
+    gap: 30px;
+  }
+
+  .footer-logo {
+    font-size: 1.45rem;
+  }
+}

@@ -1,0 +1,439 @@
+/* ============================================================
+   DevPipeline — Quality Assurance Dashboard (QADashboard.css)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+
+/* ================= GLOBAL RESET & BACKGROUND ================= */
+body {
+  margin: 0;
+  padding: 0;
+  background: #0b1020;
+  color: #dbe6ff;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* --- Primary Dashboard Layer --- */
+.qa-dashboard {
+  width: 100%;
+  min-height: 100vh;
+  
+  /* ✨ HEADER OVERLAY FIX + ROOMY SPACING */
+  padding: 10rem 8vw 6rem;
+  background: #0b1020;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= HEADINGS ================= */
+h1, h2, h3 {
+  color: #ffffff;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.qa-dashboard h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-top: 10px;
+  margin-bottom: 16px;
+  letter-spacing: 0.01em;
+}
+
+/* ================= QA HERO SECTION ================= */
+.qa-hero {
+  background: transparent;
+  border: none;
+  padding: 10px 0;
+  margin-bottom: 30px;
+  animation: fadeSlideUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.qa-hero h1 {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 70px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.qa-hero p.nat {
+  color: #a9b7d0;
+  line-height: 1.7;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* ================= IMAGE HOVER GRID ================= */
+.qa-hero-images {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0px;
+  margin-top: 20px;
+}
+
+.qa-hero-image {
+  width: 320px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 0;
+  border: 1px solid #1d2b4a;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+  margin-left: -6px;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.qa-hero-image:first-child {
+  margin-left: 0;
+}
+
+.qa-hero-image:hover {
+  transform: scale(1.03);
+  border-color: rgba(212, 175, 55, 0.4);
+  z-index: 2;
+  position: relative;
+}
+
+/* ================= PRESTIGE WHITE OVERVIEW MODULE ================= */
+.qa-overview {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 24px;
+  margin: 20px 0 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-left: 6px solid #e5c07b; /* Elegant champagne gold accent boundary strip */
+  max-width: 600px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.qa-overview:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.qa-overview h2 {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  margin-bottom: 16px;
+  font-size: 32px;
+  color: #030712;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
+}
+
+.qa-overview p {
+  margin: 12px 0;
+  font-size: 15px;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 6px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.qa-overview p:hover {
+  color: #2f6fff;
+}
+
+/* ================= INTERFACE MAIN HEADER ================= */
+.qa-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 22px;
+  background: #0e1420;
+  border-radius: 12px;
+  border: 1px solid #1a2a3a;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 12px;
+  transition: border-color 0.25s ease, transform 0.2s ease;
+}
+
+.qa-header:hover {
+  border-color: rgba(212, 175, 55, 0.3);
+  transform: translateY(-1px);
+}
+
+.qa-header h1 {
+  font-size: 22px;
+  color: #6fa8ff;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.qa-header h3 {
+  font-size: 14px;
+  color: #aab4c0;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Red Exit Action Callout Button */
+.qa-header button {
+  background: #1a2f4a;
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  padding: 9px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.qa-header button:hover {
+  background: rgba(239, 68, 68, 0.08);
+  border-color: #ef4444;
+  color: #ffffff;
+}
+
+/* Layout Dividers */
+hr {
+  border: none;
+  height: 1px;
+  background: #1a2a3a;
+  margin: 20px 0;
+}
+
+/* ================= SIDE-BY-SIDE FLEX WORKSPACE LAYER ================= */
+.qa-workspace-container {
+  display: flex;
+  width: 100%;
+  gap: 40px;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+/* Left Projects pane takes ~35%, Tasks section takes ~65% */
+.qa-workspace-column.column-left {
+  flex: 35;
+  min-width: 280px;
+}
+
+.qa-workspace-column.column-right {
+  flex: 65;
+  min-width: 450px;
+}
+
+/* ================= PROJECT CARDS ================= */
+.qa-project {
+  background: #111a2e;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: 0.25s ease;
+  animation: fadeSlideUp 0.6s ease forwards;
+}
+
+.qa-project:hover {
+  transform: translateY(-4px);
+  background: #152342;
+  border-color: #1e88ff;
+}
+
+.qa-project.active {
+  background: rgba(212, 175, 55, 0.05);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.qa-project h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.qa-project p {
+  font-size: 0.88rem;
+  color: #a9b7d0;
+  margin: 0;
+}
+
+/* ================= TASK CARDS ================= */
+.qa-task {
+  position: relative;
+  background: #0f1628;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: 0.25s ease;
+  animation: fadeSlideUp 0.7s ease forwards;
+  
+  /* Geometric luxury corner styling layout architecture */
+  clip-path: polygon(
+    0 0,
+    96% 0,
+    100% 6%,
+    100% 100%,
+    4% 100%,
+    0 94%
+  );
+}
+
+.qa-task:hover {
+  transform: translateY(-3px);
+  background: #152342;
+  border-color: #1e88ff !important;
+}
+
+.qa-task h3 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.qa-task p {
+  font-size: 0.95rem;
+  color: #a9b7d0;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+/* ================= ACTIONS & BUTTONS ================= */
+button {
+  background: #1b2a4a;
+  color: #dbe6ff;
+  border: 1px solid #243a66;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 8px;
+  margin-top: 6px;
+  transition: 0.25s ease;
+}
+
+button:hover {
+  background: #25406f;
+  transform: translateY(-2px);
+}
+
+/* Action: Approve Button */
+.qa-task button:nth-of-type(1),
+button[style*="green"] {
+  background: #2f6fff !important;
+  color: white !important;
+  border-color: #2f6fff !important;
+}
+
+/* Action: Reject Button */
+.qa-task button:nth-of-type(2),
+button[style*="red"] {
+  background: #3a4f7a !important;
+  color: #dbe6ff !important;
+  border-color: #3a4f7a !important;
+}
+
+/* Action: Needs Fix Button */
+.qa-task button:nth-of-type(3),
+button[style*="orange"] {
+  background: #2b4a7f !important;
+  color: #dbe6ff !important;
+  border-color: #2b4a7f !important;
+}
+
+/* Action: Send to PM Button */
+.qa-task button:nth-of-type(4),
+button[style*="#007bff"] {
+  background: #2979ff !important;
+  color: white !important;
+  border-color: #2979ff !important;
+}
+
+/* ================= TEXTAREA INPUTS ================= */
+textarea {
+  background: #0c1224;
+  color: #e6f0ff;
+  border: 1px solid #1d2b4a;
+  border-radius: 8px;
+  padding: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  min-height: 85px;
+  margin-top: 10px;
+  margin-bottom: 16px;
+  transition: 0.3s ease;
+}
+
+textarea:focus {
+  border-color: #3d7dff;
+  background: #0f1832;
+}
+
+/* ================= HYPERLINKS ================= */
+a {
+  color: #4ea1ff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ================= ENTRY ENTRANCE ANIMATION ================= */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE STRUCTURAL OVERRIDES ================= */
+@media (max-width: 992px) {
+  .qa-workspace-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .qa-workspace-column.column-left,
+  .qa-workspace-column.column-right {
+    flex: 100;
+    width: 100%;
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .qa-dashboard {
+    padding: 8rem 4vw 4rem;
+  }
+  
+  .qa-hero h1 {
+    font-size: 42px;
+  }
+  
+  .qa-task {
+    clip-path: none;
+  }
+}

@@ -1,0 +1,189 @@
+/* ================= DESIGN SYSTEM ================= */
+:root {
+  --bg: #070b14;
+  --panel: #0d1424;
+  --panel-2: #0a101d;
+  --border: rgba(120, 160, 255, 0.12);
+
+  --text: #e6ecff;
+  --muted: #9aa7c7;
+
+  --accent: #3d84ff;
+  --accent-soft: rgba(61, 132, 255, 0.12);
+
+  --success: #2ee59d;
+  --danger: #ff4d4d;
+
+  --radius: 12px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* ================= GLOBAL ================= */
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* MAIN WRAPPER */
+body > div {
+  padding: 24px;
+}
+
+/* ================= TITLES ================= */
+h1 {
+  font-size: 22px;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: var(--text);
+}
+
+h3 {
+  font-size: 15px;
+}
+
+h4 {
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+/* ================= PROJECT HEADER ================= */
+h1 + div {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 14px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 16px;
+}
+
+h1 + div p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* ================= TABS ================= */
+h1 + div + hr + div {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* buttons */
+button {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  border-color: var(--accent);
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+/* ================= DIVIDER ================= */
+hr {
+  border: none;
+  height: 1px;
+  background: var(--border);
+  margin: 14px 0;
+}
+
+/* ================= CARDS ================= */
+div > div > h2 + * {
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px;
+  margin: 10px 0;
+  box-shadow: var(--shadow);
+}
+
+/* hover cards */
+div > div > div {
+  transition: 0.2s ease;
+}
+
+div > div > div:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+/* ================= ROLE BADGES ================= */
+div > div > div span {
+  display: inline-block;
+  padding: 3px 8px;
+  font-size: 11px;
+  border-radius: 6px;
+  margin-left: 6px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* ================= INPUTS ================= */
+input,
+textarea,
+select {
+  width: 100%;
+  max-width: 420px;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 10px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 12px;
+  outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--accent);
+}
+
+/* ================= LINKS ================= */
+a {
+  color: var(--accent);
+  font-size: 12px;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ================= TEXT ================= */
+p {
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+/* ================= NOTIFICATIONS ================= */
+div > div > div:has(> b) {
+  background: rgba(61, 132, 255, 0.08);
+  border-left: 3px solid var(--accent);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  body > div {
+    padding: 12px;
+  }
+
+  h1 + div + hr + div {
+    flex-direction: column;
+  }
+}

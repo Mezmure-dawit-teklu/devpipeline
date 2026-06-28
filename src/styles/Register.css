@@ -1,0 +1,59 @@
+.register-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0b0f17;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.register-container {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+}
+
+.register-container input,
+.register-container select {
+  padding: 12px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  outline: none;
+}
+
+.register-container button {
+  padding: 12px;
+  background: #238636;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* X BUTTON */
+.register-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  
+
+  font-size: 18px;
+  color: #9ca3af;
+
+  border: none;
+  background: transparent;
+
+  
+
+  z-index: 9999;
+}

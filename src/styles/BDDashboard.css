@@ -1,0 +1,298 @@
+.bd-container {
+  --ember: #C0392B;
+  --ember-light: #E05A4A;
+  --ember-dim: #7A2318;
+
+  --ash: #07080A;
+  --ash-2: #0D0F12;
+
+  --fg: #EDE0D8;
+  --fg-muted: #8A7068;
+
+  --divider: rgba(46, 30, 24, 0.6);
+
+  --white-soft: rgba(255, 255, 255, 0.04);
+  --white-mid:  rgba(255, 255, 255, 0.07);
+  --white-lift: rgba(255, 255, 255, 0.10);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+  --transition-fast: 0.15s ease;
+  --transition: 0.25s ease;
+
+  max-width: 980px;
+  margin: 0 auto;
+  margin-top: 70px; /* adjust to match your header height */
+  padding: 3rem 2rem 5rem;
+
+  background: radial-gradient(circle at top, var(--ash-2), var(--ash));
+
+  color: var(--fg);
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  min-height: 100vh;
+  position: relative;
+}
+
+.bd-container * { box-sizing: border-box; }
+
+.bd-container :focus-visible {
+  outline: 2px solid var(--ember-light);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.bd-container h1 {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ember-light);
+  margin-bottom: 6px;
+  opacity: 0.9;
+}
+
+.bd-container h2 {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ember-light);
+  margin-bottom: 1.2rem;
+}
+
+.bd-container h3 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+.bd-container p {
+  color: var(--fg-muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.bd-container hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--divider), transparent);
+  margin: 2rem 0;
+}
+
+/* ── Top Bar ─────────────────────────────────────────────── */
+.bd-container .fd-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.6rem 1rem;
+  margin-bottom: 2.5rem;
+  background: var(--white-soft);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-md);
+}
+
+.bd-container .fd-subnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.bd-container .fd-subnav button {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--fg-muted);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.bd-container .fd-subnav button:hover {
+  color: var(--fg);
+  background: rgba(192, 57, 43, 0.08);
+}
+
+.bd-container .fd-subnav button.active {
+  color: var(--ember-light);
+  border-color: var(--ember-dim);
+  background: rgba(192, 57, 43, 0.12);
+}
+
+.bd-container .fd-logout {
+  background: transparent;
+  border: none;
+  color: var(--fg-muted);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.bd-container .fd-logout:hover { color: var(--ember-light); }
+
+/* ── Overview ────────────────────────────────────────────── */
+.bd-container .fd-overview {
+  background: var(--white-soft);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1.75rem;
+}
+
+/* ── Project Card ─────────────────────────────────────────── */
+.bd-container .fd-project-card {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background: var(--white-soft);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.bd-container .fd-project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.bd-container .fd-project-card h3 {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--divider);
+}
+
+/* ── Task Card ────────────────────────────────────────────── */
+.bd-container .fd-task-card {
+  padding: 1rem 1.1rem;
+  margin-bottom: 0.75rem;
+  background: var(--white-mid);
+  border: 1px solid var(--divider);
+  border-left: 2px solid var(--ember-dim);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.bd-container .fd-task-card:hover {
+  background: var(--white-lift);
+  border-left-color: var(--ember-light);
+}
+
+.bd-container .fd-task-card b {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ember-light);
+  margin-bottom: 6px;
+}
+
+.bd-container .fd-task-card p {
+  font-size: 13px;
+  color: var(--fg-muted);
+  margin-bottom: 0.85rem;
+}
+
+/* ── Invitation Card (reuses fd-task-card, accent override) ── */
+.bd-container .fd-task-card:has(button + button) {
+  background: var(--white-mid);
+  border-left-color: var(--divider);
+}
+
+/* ── Inputs ───────────────────────────────────────────────── */
+.bd-container input:not([type="file"]):not([type="checkbox"]):not([type="radio"]) {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--divider);
+  color: var(--fg);
+  font-size: 14px;
+  padding: 0 4px;
+  margin-bottom: 14px;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.bd-container input:not([type="file"]):not([type="checkbox"]):not([type="radio"]):focus {
+  border-bottom-color: var(--ember-dim);
+}
+
+.bd-container input:not([type="file"]):not([type="checkbox"]):not([type="radio"])::placeholder {
+  color: var(--fg-muted);
+}
+
+.bd-container input[type="file"] {
+  width: 100%;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--divider);
+  color: var(--fg-muted);
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.bd-container input[type="file"]:hover { border-bottom-color: var(--ember-dim); }
+
+.bd-container input[type="file"]::file-selector-button {
+  background: transparent;
+  border: none;
+  color: var(--ember-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.bd-container input[type="file"]::file-selector-button:hover { color: var(--ember-light); }
+
+/* ── Buttons ──────────────────────────────────────────────── */
+.bd-container button {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--fg-muted);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.bd-container button:hover:not(:disabled) {
+  color: var(--ember-light);
+  border-color: var(--ember-dim);
+  background: rgba(192, 57, 43, 0.06);
+}
+
+.bd-container button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.bd-container .fd-task-card button:first-of-type {
+  color: var(--ember);
+  border-color: var(--ember-dim);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .bd-container { padding: 2rem 1rem 3rem; }
+  .bd-container .fd-topbar { flex-direction: column; align-items: flex-start; }
+  .bd-container .fd-logout { align-self: flex-end; }
+}

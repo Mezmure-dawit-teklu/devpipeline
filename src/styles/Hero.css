@@ -1,0 +1,249 @@
+/* ============================================================
+   DevPipeline — Luxurious Left-Aligned Hero Theme
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Ultra-luxurious midnight obsidian palette */
+  --hero-bg-top: #030712;
+  --hero-bg-bottom: #0b1329;
+
+  /* Ambient editorial lighting (Champagne gold & deep velvet sapphire) */
+  --hero-glow-1: rgba(212, 175, 55, 0.06);
+  --hero-glow-2: rgba(30, 58, 138, 0.2);
+
+  /* Premium typography colors */
+  --title-color: #f8fafc;
+  --title-gradient-start: #ffffff;
+  --title-gradient-end: #e5c07b; /* Liquid gold finish */
+
+  --desc-color: #94a3b8;
+
+  /* Luxurious Velvet Gold Primary Button */
+  --primary-bg: #d4af37;
+  --primary-bg-hover: #c5a028;
+  --primary-text: #030712;
+  --primary-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+  --primary-shadow-hover: 0 0 0 4px rgba(212, 175, 55, 0.12),
+                          0 16px 32px rgba(212, 175, 55, 0.2);
+
+  /* Clean minimal secondary button */
+  --secondary-border: rgba(255, 255, 255, 0.12);
+  --secondary-border-hover: rgba(212, 175, 55, 0.4);
+  --secondary-text: #cbd5e1;
+  --secondary-text-hover: #e5c07b;
+  --secondary-bg-hover: rgba(212, 175, 55, 0.03);
+
+  /* Smooth, high-end deceleration curves */
+  --transition: 400ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ── Section shell ──────────────────────────────────────────── */
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  
+  /* Left-aligned structure */
+  align-items: flex-start;
+  text-align: left;
+  
+  /* Generous padding for an expansive, premium layout */
+  padding: 11rem 2rem 11rem 8%; 
+  min-height: 90vh;
+  justify-content: center;
+  
+  background: linear-gradient(150deg, var(--hero-bg-top) 0%, var(--hero-bg-bottom) 100%);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Asymmetric ambient luxury glow blobs */
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(80px);
+}
+
+/* Gold glow softly pooling behind the text */
+.hero::before {
+  width: 600px;
+  height: 600px;
+  top: -10%;
+  left: -5%;
+  background: radial-gradient(circle, var(--hero-glow-1) 0%, transparent 70%);
+}
+
+/* Deep contrast sapphire anchoring the bottom right background */
+.hero::after {
+  width: 900px;
+  height: 500px;
+  bottom: -10%;
+  right: -5%;
+  background: radial-gradient(ellipse, var(--hero-glow-2) 0%, transparent 70%);
+}
+
+/* ── Heading (Editorial Serif) ────────────────────────────── */
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  max-width: 840px;
+  margin: 0 0 1.75rem;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  
+  /* Fixed syntax clean gradient line */
+  background: linear-gradient(
+    135deg,
+    var(--title-gradient-start) 30%,
+    var(--title-gradient-end) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Description (Clean Modern Sans) ────────────────────────── */
+.hero p {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  max-width: 560px;
+  margin: 0 0 3.5rem;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  line-height: 1.8;
+  color: var(--desc-color);
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+/* ── Actions ────────────────────────────────────────────────── */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Aligned left */
+}
+
+.primary-btn {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  padding: 0.85rem 2.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary-text);
+  background: var(--primary-bg);
+  border: none;
+  border-radius: 4px; /* Clean, architectural sharp edges */
+  cursor: pointer;
+  box-shadow: var(--primary-shadow);
+  transition: background var(--transition), box-shadow var(--transition),
+              transform 200ms ease;
+}
+
+.primary-btn:hover {
+  background: var(--primary-bg-hover);
+  box-shadow: var(--primary-shadow-hover);
+  transform: translateY(-2px);
+}
+
+.primary-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.secondary-btn {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  padding: 0.83rem 2.35rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--secondary-text);
+  background: transparent;
+  border: 1px solid var(--secondary-border);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color var(--transition), border-color var(--transition),
+              background var(--transition), transform 200ms ease;
+}
+
+.secondary-btn:hover {
+  color: var(--secondary-text-hover);
+  border-color: var(--secondary-border-hover);
+  background: var(--secondary-bg-hover);
+  transform: translateY(-2px);
+}
+
+.secondary-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* ── Scroll reveal (Eases elegantly from the left) ──────────── */
+.reveal {
+  opacity: 0;
+  transform: translateX(-30px); /* Slides softly rightward */
+  transition: opacity 1000ms cubic-bezier(0.25, 1, 0.5, 1),
+              transform 1000ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal.hide {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+/* Staggered entrance timeline */
+.hero h1.reveal       { transition-delay: 0ms; }
+.hero p.reveal        { transition-delay: 150ms; }
+.hero-actions.reveal  { transition-delay: 300ms; }
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero {
+    padding: 8rem 2rem 8rem 5%;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 6rem 1.5rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ── Reduced motion ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.show,
+  .reveal.hide {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    transition: none;
+  }
+}
